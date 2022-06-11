@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">AppsMoviles_Practica1_3</string>
+    <string name="string_titulo">Calculadora de áreas</string>
+    <string name="string_square">Área Cuadrado</string>
+    <string name="string_lado1cuadrado">Lado 1 (m)</string>
+    <string name="string_calc">Calcular</string>
+    <string name="string_empyty" />
+    <string name="string_triangulo">Área triangulo</string>
+    <string name="string_baseT">Base (m)</string>
+    <string name="string_alturaT">Altura (m)</string>
+    <string name="string_circulo">Área círculo</string>
+    <string name="string_radio">Radio (m)</string>
 </resources>

@@ -15,7 +15,7 @@ class MainActivity : Activity() {
         setContentView(view)
 
         with(mainBinding){
-            
+
         }
     }
 }
