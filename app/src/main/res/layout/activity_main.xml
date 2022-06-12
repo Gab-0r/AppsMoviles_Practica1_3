@@ -88,7 +88,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="8dp"
             android:layout_weight="1"
-            tools:src="@mipmap/cuadrado" />
+            android:src="@mipmap/cuadrado" />
 
     </LinearLayout>
 
@@ -166,7 +166,7 @@
             android:layout_width="115dp"
             android:layout_height="81dp"
             android:layout_gravity="center_horizontal|center_vertical"
-            tools:src="@mipmap/triangulo" />
+            android:src="@mipmap/triangulo" />
     </LinearLayout>
 
     <LinearLayout
@@ -226,7 +226,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_marginLeft="8dp"
-            tools:src="@mipmap/circulo" />
+            android:src="@mipmap/circulo" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
