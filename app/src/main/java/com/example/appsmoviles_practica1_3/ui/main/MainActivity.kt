@@ -1,4 +1,4 @@
-package com.example.appsmoviles_practica1_3
+package com.example.appsmoviles_practica1_3.ui.main
 
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
