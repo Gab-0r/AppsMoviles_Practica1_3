@@ -3,35 +3,47 @@ package com.example.appsmoviles_practica1_3.ui.main
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
 import com.example.appsmoviles_practica1_3.databinding.ActivityMainBinding
 
 private lateinit var mainBinding: ActivityMainBinding
+private lateinit var mainViewModel: MainViewModel
 
-class MainActivity : Activity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         val view = mainBinding.root
         setContentView(view)
 
+        mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
+
+        mainViewModel.square_areaDone.observe(this){
+            mainBinding.textViewAcuadrado.text = it.toString() + " m2"
+        }
+
+        mainViewModel.triangle_areaDone.observe(this){
+            mainBinding.textViewAtriangulo.text = it.toString() + " m2"
+        }
+
+        mainViewModel.circle_areaDone.observe(this){
+            mainBinding.textViewAcirculo.text = it.toString() + " m2"
+        }
+
         with(mainBinding){
 
             buttonCuadrado.setOnClickListener{
-                var lado_c = textInputEditTextLado1cuadrado.text.toString().toInt()
-                var area = lado_c * lado_c
-                textViewAcuadrado.text = area.toString() + " m2"
+                mainViewModel.calc_square(textInputEditTextLado1cuadrado.text.toString().toFloat())
             }
 
             buttonTriangulo.setOnClickListener{
-                var base_t = textInputEditTextBaseT.text.toString().toInt()
-                var altura_t = textInputEditTextAlturaT.text.toString().toInt()
-                textViewAtriangulo.text = (base_t * altura_t/2).toString()  + " m2"
+                mainViewModel.calc_triangle(textInputEditTextBaseT.text.toString().toFloat(), textInputEditTextAlturaT.text.toString().toFloat())
             }
 
             buttonAcirculo.setOnClickListener{
-                var radio_c = TextInputEditTextRadio.text.toString().toInt()
-                textViewAcirculo.text = (3.141592f * radio_c * radio_c).toString() + " m2"
+                mainViewModel.calc_circle(TextInputEditTextRadio.text.toString().toFloat())
             }
+
         }
     }
 }
